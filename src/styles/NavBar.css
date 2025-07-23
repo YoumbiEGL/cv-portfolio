@@ -1,0 +1,362 @@
+.navbar {
+  background: var(--bg-main);
+  padding: 1.2rem 0 1.2rem 0;
+  box-shadow: 0 4px 24px 0 #43e97b22;
+  width: 100vw;
+  min-width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  border-bottom: 1.5px solid var(--border);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-right: 2.5rem;
+}
+
+.navbar-logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: #232323;
+  object-fit: contain;
+}
+
+.navbar-brand {
+  color: var(--accent);
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.navbar ul {
+  display: flex;
+  justify-content: center;
+  gap: 2.8rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li {
+  display: inline;
+}
+
+.navbar button {
+  background: none;
+  border: none;
+  color: var(--text-main);
+  font-size: 1.15rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0.7rem 1.7rem;
+  border-radius: 30px;
+  letter-spacing: 0.5px;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(67,233,123,0.04);
+  outline: none;
+}
+
+.navbar button.active {
+  background: linear-gradient(90deg, var(--accent) 0%, var(--accent2) 100%);
+  color: var(--bg-main);
+  box-shadow: 0 4px 16px #43e97b44;
+  font-weight: 900;
+}
+
+.navbar button:hover {
+  background: linear-gradient(90deg, var(--accent) 0%, var(--accent2) 100%);
+  color: var(--bg-main);
+  box-shadow: 0 4px 16px #43e97b44;
+}
+
+.navbar-socials {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  margin-left: 2.5rem;
+}
+
+.navbar-socials a {
+  color: #bdbdbd;
+  font-size: 1.5rem;
+  transition: color 0.2s;
+}
+
+.navbar-socials a:hover {
+  color: #43e97b;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  margin-left: 1.2rem;
+  cursor: pointer;
+  color: var(--accent);
+  transition: color 0.2s;
+}
+
+.theme-toggle:hover {
+  color: var(--accent2);
+}
+
+@media (max-width: 900px) {
+  .navbar ul {
+    gap: 1.2rem;
+  }
+  .navbar button {
+    font-size: 1rem;
+    padding: 0.6rem 1.1rem;
+  }
+  .navbar-left, .navbar-socials {
+    display: none;
+  }
+}
+
+/* Ajout d'une responsivité totale pour la navbar, y compris menu burger mobile */
+
+@media (max-width: 700px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.7rem 0 0.7rem 0;
+    min-width: 100vw;
+    width: 100vw;
+    height: auto;
+  }
+  .navbar-left {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    justify-content: flex-start;
+    display: flex;
+  }
+  .navbar ul {
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100vw;
+    align-items: flex-start;
+    padding-left: 1.2rem;
+    background: var(--bg-main);
+    box-shadow: none;
+  }
+  .navbar li {
+    width: 100%;
+    display: block;
+  }
+  .navbar button {
+    width: 100%;
+    text-align: left;
+    padding: 0.7rem 1.2rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    margin-bottom: 0.2rem;
+  }
+  .navbar-socials {
+    margin-left: 0;
+    margin-top: 0.7rem;
+    width: 100vw;
+    justify-content: flex-start;
+    gap: 0.7rem;
+    display: flex;
+  }
+  .theme-toggle {
+    margin-left: 0.7rem;
+    font-size: 1.3rem;
+  }
+}
+
+/* Burger menu styles */
+.burger-menu {
+  display: none;
+  background: none;
+  border: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  z-index: 120;
+  margin-left: 0.5rem;
+}
+.burger-bar {
+  width: 28px;
+  height: 3.5px;
+  background: var(--accent);
+  margin: 3.5px 0;
+  border-radius: 2px;
+  transition: all 0.3s cubic-bezier(.4,0,.2,1);
+  display: block;
+}
+.burger-bar.open:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.burger-bar.open:nth-child(2) {
+  opacity: 0;
+}
+.burger-bar.open:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (max-width: 900px) {
+  .burger-menu {
+    display: flex;
+  }
+  .navbar ul {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100vw;
+    background: var(--bg-main);
+    box-shadow: 0 4px 24px 0 #43e97b22;
+    flex-direction: column;
+    z-index: 110;
+    padding-bottom: 1.2rem;
+  }
+  .navbar ul.open {
+    display: flex;
+  }
+  .navbar ul.open li button.active {
+    background: linear-gradient(90deg, var(--accent) 0%, var(--accent2) 100%);
+    color: var(--bg-main);
+    font-weight: 900;
+    box-shadow: 0 4px 16px #43e97b44;
+    border: 2px solid var(--accent2);
+    outline: 2px solid var(--accent2);
+    outline-offset: 2px;
+  }
+  .navbar ul.open li button {
+    background: var(--bg-card);
+    color: var(--text-main);
+    border: none;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+    box-shadow: 0 2px 8px rgba(67,233,123,0.04);
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s, border 0.2s;
+  }
+  .navbar-socials {
+    margin-left: 0;
+    margin-top: 0.7rem;
+    width: 100vw;
+    justify-content: flex-start;
+    gap: 0.7rem;
+    display: flex;
+  }
+}
+
+/* Regroupe le menu et les réseaux sociaux pour le burger */
+.navbar-menu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .navbar-menu {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100vw;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background: var(--bg-main);
+    z-index: 110;
+    box-shadow: 0 4px 24px 0 #43e97b22;
+    display: none;
+    padding-bottom: 1.2rem;
+  }
+  .navbar-menu.open {
+    display: flex;
+    min-height: 100vh;
+    height: 100vh;
+    overflow-y: auto;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+  }
+  .navbar ul {
+    position: static;
+    box-shadow: none;
+    background: none;
+    width: 100vw;
+    margin-bottom: 0.7rem;
+  }
+  .navbar-socials {
+    width: 100vw;
+    justify-content: flex-start;
+    gap: 0.7rem;
+    display: flex;
+    margin-left: 0;
+    margin-top: 0;
+    padding-left: 1.2rem;
+  }
+}
+
+@media (max-width: 900px) {
+  html, body {
+    height: auto;
+    overflow: auto;
+  }
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    min-width: 100vw;
+    min-height: unset;
+    height: auto;
+    background: var(--bg-main);
+    z-index: 200;
+    overflow: visible;
+  }
+  .navbar-menu {
+    position: static;
+    min-height: unset;
+    height: auto;
+    overflow: visible;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+  }
+  .navbar-menu.open {
+    display: flex;
+  }
+  .navbar ul.open {
+    min-height: unset;
+    height: auto;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+  }
+}
+
+/* Amélioration accessibilité et touch targets */
+.navbar button, .navbar-socials a, .theme-toggle {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Correction du scroll sur mobile */
+body {
+  overscroll-behavior-y: none;
+}
+
+/* Pour éviter le débordement horizontal */
+.navbar, .navbar ul, .navbar-socials {
+  box-sizing: border-box;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
