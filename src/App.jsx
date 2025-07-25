@@ -17,7 +17,7 @@ import "./styles/Loader.css";
 
 function App() {
   const [section, setSection] = useState("description");
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState("light"); // Définit le thème principal sur 'light'
   const [loading, setLoading] = useState(false);
 
   React.useEffect(() => {
