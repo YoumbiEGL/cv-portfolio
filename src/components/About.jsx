@@ -38,6 +38,12 @@ const About = () => (
       <span>Ponctualité</span>
       <span>C, C#, SQL, JavaScript, Python, HTML, CSS, PHP</span>
       <span>Django</span>
+      <span>Développement d’applications desktop avec Electron</span>
+      <span>Programmation Python (API Flask, monitoring système)</span>
+      <span>Intégration frontend/backend (communication HTTP)</span>
+      <span>UI/UX design moderne (Chart.js, modales, notifications)</span>
+      <span>Packaging et déploiement multiplateforme (Electron Packager)</span>
+      <span>Gestion de projet, documentation, versioning Git</span>
     </div>
     <h2>Langues</h2>
     <div className="lang-list">

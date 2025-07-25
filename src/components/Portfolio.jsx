@@ -37,6 +37,14 @@ const projects = [
     year: "2022",
     description: "Développement d’un CMS avec HTML, JS, CSS, Ajax, PHP.",
     outils: "HTML, JS, CSS, Ajax, PHP"
+  },
+  {
+    title: "System Monitor Electron",
+    year: "2025",
+    description:
+      "Développement d’une application multiplateforme (Linux/Windows) de surveillance système en temps réel, combinant Electron (frontend moderne) et Python (backend API). Interface graphique interactive, alertes personnalisées, gestion des seuils, packaging en exécutable.",
+    outils:
+      "Electron, Python (Flask), Chart.js, Electron Packager, UI/UX, Git"
   }
 ];
 
